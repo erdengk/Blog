@@ -8,14 +8,13 @@ import java.sql.Statement;
 public class DBBean
 { 	
 	private String driverStr = "com.mysql.jdbc.Driver";
-	private String connStr = "jdbc:mysql://localhost:3306/login?useUnicode=true&characterEncoding=utf-8&useSSL=false"; 
+	private String connStr = "jdbc:mysql://localhost:3306/bbs?useUnicode=true&characterEncoding=utf-8&useSSL=false"; 
 	private String dbusername = "root"; 
 	private String dbpassword = "root";
 	private Connection conn = null; 
 	private static Statement stmt = null;
 	public DBBean() 
 	{ 
-		
 		try { 
 			Class.forName(driverStr); 
 			conn = DriverManager.getConnection(connStr, dbusername, dbpassword); 
@@ -90,4 +89,5 @@ public class DBBean
             }
         }
     }
+
 }

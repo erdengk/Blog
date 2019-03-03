@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
     pageEncoding="UTF-8"%> 
 <html>
@@ -48,9 +47,9 @@
                   <div class="title">
             
                   </div>
-                <center><div width="10px" height="30px"><img src="../img/success.png">
+                <center><div width="10px" height="30px"><img src="../img/fail.png">
                 
-					<a href="/githup/index.jsp"><h1>${username}登录成功,点击返回主页</h1></div></href>
+					<a href="/githup/index.jsp"><h1>${username}操作失败,点击返回主页</h1></div></href>
 				</center>		  
                 </div>
               </div>

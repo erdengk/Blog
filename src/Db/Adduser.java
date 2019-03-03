@@ -17,7 +17,6 @@ public class Adduser {
 			{
 				return 0;
 			}else{
-				
 				String sql=	 "insert into user (username,password,email) values (?,?,?)";
 				preparedStatement = con.prepareStatement(sql);
 				preparedStatement.setString(1, username);

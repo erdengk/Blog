@@ -24,8 +24,8 @@ public class doLogin extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("text/html;charset=utf-8");
+//		request.setCharacterEncoding("UTF-8");
+//        response.setCharacterEncoding("text/html;charset=UTF-8");
 		System.out.println("正常运行   到达servlet   Login");
 		String inputusername = request.getParameter("username");
 		String inputpassword = request.getParameter("password");
@@ -33,7 +33,7 @@ public class doLogin extends HttpServlet {
 		System.out.println("当前密码"+inputpassword);
 		int b=Find.Find(inputusername, inputpassword);
 		String xinxi="信息123xinxi";
-		request.setAttribute("message", xinxi);
+		request.setAttribute("username", inputusername);
 		if(b==1)
 		{
 			System.out.println("去往welcome ");
@@ -54,6 +54,9 @@ public class doLogin extends HttpServlet {
 		//response.setContentType("text/html");request.setAttribute("message", xinxi);
 		//PrintWriter out = response.getWriter();
 		//    java 中是 引用传递   
+//		
+//		request.setCharacterEncoding("UTF-8");
+//        response.setCharacterEncoding("text/html;charset=UTF-8");
 		doGet(request, response);
 	}
 }
