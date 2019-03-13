@@ -1,14 +1,15 @@
 package Servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Db.Find;
+import User.User;
 
 public class doLogin extends HttpServlet {
 
@@ -32,21 +33,28 @@ public class doLogin extends HttpServlet {
 		System.out.println("当前用户"+inputusername);
 		System.out.println("当前密码"+inputpassword);
 		int b=Find.Find(inputusername, inputpassword);
-		String xinxi="信息123xinxi";
 		request.setAttribute("username", inputusername);
 		if(b==1)
 		{
 			System.out.println("去往welcome ");
 			request.setAttribute(inputusername, "123");
+			
+			User u = new User();
+			u.setUsername(inputusername);
+			u.setPassword(inputpassword);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("u", u);
+			
 //		    request.setAttribute(“curruser”, curruser);
 //			setAttribute这个方法是将curruser这个对象保存在request作用域中，
 //			然后在转发进入的页面就可以获取到你的值
-			request.getRequestDispatcher("/login/success.jsp").forward(request, response);	
+			request.getRequestDispatcher("/success.jsp").forward(request, response);	
 			//request.getRequestDispatcher("/Welcome").forward(request, response);
 		}
 		else{
 			System.out.println("去往fail ");
-			request.getRequestDispatcher("/login/fail.jsp").forward(request, response);
+			request.getRequestDispatcher("/fail.jsp").forward(request, response);
 		}
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

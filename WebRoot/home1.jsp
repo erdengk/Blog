@@ -25,18 +25,17 @@
 	       
 
 	       </tr>
- <c:forEach var="u" items="${userAll}"> 
+ <c:forEach var="u" items="${userBlogAll}"> 
  <form action="UpdateServlet" method="post"> 
  <tr>
   <td><input type="text" value="${u.username}" name="id" ></td> 
-  <td><input type="text" value="${u.password}" name="name"></td>
-  <td><input type="text" value="${u.email}" name="sex"></td>
+  <td><input type="text" value="${u.title}" name="name"></td><br/>${u.title}<br/>
+  <td><input type="text" value="${u.txt}" name="sex"></td>${u.txt}
        <input type="submit" value="更新"/></td>
         </tr> 
         </form> 
         </c:forEach>
          </table>
-         
 
 </body>
 </html>

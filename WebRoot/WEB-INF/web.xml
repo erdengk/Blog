@@ -21,6 +21,16 @@
     <servlet-name>showAll</servlet-name>
     <servlet-class>Servlet.showAll</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>showBlog</servlet-name>
+    <servlet-class>Servlet.showBlog</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Blog</servlet-name>
+    <servlet-class>Servlet.Blog</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -45,6 +55,14 @@
   <servlet-mapping>
     <servlet-name>showAll</servlet-name>
     <url-pattern>/servlet/showAll</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>showBlog</servlet-name>
+    <url-pattern>/servlet/showBlog</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Blog</servlet-name>
+    <url-pattern>/servlet/blog</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
